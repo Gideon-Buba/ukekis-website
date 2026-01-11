@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import GetStartedButton from "./GetStartedButton";
 
 export default function FeatureCTA() {
   return (
@@ -37,17 +38,14 @@ export default function FeatureCTA() {
               marketplace.
             </motion.p>
 
-            <motion.button 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.05, backgroundColor: "#065f46" }}
-              whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
-              className="w-fit rounded-md bg-emerald-700 px-6 py-3 text-sm font-medium text-white hover:bg-emerald-800"
             >
-              Get Started
-            </motion.button>
+              <GetStartedButton size="lg" className="w-fit" />
+            </motion.div>
           </div>
         </motion.div>
 
