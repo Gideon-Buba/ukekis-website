@@ -1,33 +1,64 @@
+"use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function FeatureCTA() {
   return (
     <section className="bg-white px-6 py-20">
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-6 md:grid-cols-2 md:gap-4">
         {/* TEXT CARD */}
-        <div
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
           className="relative z-10 rounded-xl bg-emerald-100
                         md:h-[484px] md:w-[585px] p-8 flex"
         >
           {/* CONTENT WRAPPER */}
           <div className="flex flex-col justify-center text-left max-w-md">
-            <h2 className="mb-4 text-3xl font-semibold text-gray-900">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="mb-4 text-3xl font-semibold text-gray-900"
+            >
               Show up where clients are already looking
-            </h2>
+            </motion.h2>
 
-            <p className="mb-6 text-gray-700">
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="mb-6 text-gray-700"
+            >
               Get listed, get reviewed, and grow your credibility in a trusted
               marketplace.
-            </p>
+            </motion.p>
 
-            <button className="w-fit rounded-md bg-emerald-700 px-5 py-2 text-sm font-medium text-white hover:bg-emerald-800">
+            <motion.button 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ scale: 1.05, backgroundColor: "#065f46" }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="w-fit rounded-md bg-emerald-700 px-5 py-2 text-sm font-medium text-white hover:bg-emerald-800"
+            >
               Get Started
-            </button>
+            </motion.button>
           </div>
-        </div>
+        </motion.div>
 
         {/* IMAGE */}
-        <div
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          whileHover={{ scale: 1.02 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
           className="relative md:-ml-12
                         md:h-[484px] md:w-[585px] overflow-hidden rounded-xl"
         >
@@ -38,7 +69,7 @@ export default function FeatureCTA() {
             className="object-cover"
             priority
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

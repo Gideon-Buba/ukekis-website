@@ -5,10 +5,11 @@ import HowItWorks from "./components/HowItWorks";
 import WhyChooseUs from "./components/WhyChooseUs";
 import FeatureCTA from "./components/FeatureCTA";
 import WhatWeOffer from "./components/WhatWeOffer";
+import AnimationWrapper from "./components/AnimationWrapper";
 
 export default function Home() {
   return (
-    <>
+    <AnimationWrapper>
       <Navbar />
       <Hero />
       <Showcase />
@@ -16,6 +17,6 @@ export default function Home() {
       <WhyChooseUs />
       <WhatWeOffer />
       <FeatureCTA />
-    </>
+    </AnimationWrapper>
   );
 }

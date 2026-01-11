@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const showcaseImages = [
   "/images/hero-image-1.png",
@@ -11,13 +13,21 @@ export default function Showcase() {
     <section className="bg-slate-50 px-6 pb-24">
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-3">
         {showcaseImages.map((src, index) => (
-          <div
+          <motion.div
             key={index}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{ y: -8, scale: 1.02 }}
+            transition={{ 
+              duration: 0.6, 
+              delay: index * 0.1,
+              ease: "easeOut"
+            }}
+            viewport={{ once: true, margin: "-50px" }}
             className="
               group relative h-64 overflow-hidden rounded-2xl
               bg-white shadow-md
               transition-all duration-300 ease-out
-              hover:-translate-y-2 hover:shadow-xl
             "
           >
             {/* Image */}
@@ -42,7 +52,7 @@ export default function Showcase() {
                 group-hover:bg-black/10
               "
             />
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
