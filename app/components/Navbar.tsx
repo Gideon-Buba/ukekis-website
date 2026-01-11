@@ -1,13 +1,22 @@
+"use client";
+import { motion } from "framer-motion";
+import GetStartedButton from "./GetStartedButton";
+
 export default function Navbar() {
   return (
-    <nav className="flex items-center justify-between px-6 py-4 bg-white">
-      <div className="font-bold text-xl">UKEKI’S</div>
-
-      <div className="flex items-center gap-4">
-        <button className="px-4 py-2 text-sm bg-[#19796B] text-white rounded-md">
-          Get Started
-        </button>
+    <motion.nav
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="flex items-center justify-between px-4 py-3 sm:px-6 sm:py-4 bg-white shadow-sm"
+    >
+      <div className="font-bold text-lg sm:text-xl text-gray-900">
+        UKEKI&#39;S
       </div>
-    </nav>
+
+      <div className="flex items-center gap-2 sm:gap-4">
+        <GetStartedButton />
+      </div>
+    </motion.nav>
   );
 }

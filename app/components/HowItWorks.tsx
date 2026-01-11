@@ -32,7 +32,7 @@ const cards = [
 
 export default function HowItWorks() {
   return (
-    <section className="px-6 py-20 bg-white">
+    <section className="px-4 py-12 sm:px-6 sm:py-20 bg-white">
       <div className="mx-auto max-w-6xl">
         {/* Header aligned with cards */}
         <motion.h2 
@@ -40,12 +40,12 @@ export default function HowItWorks() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mb-12 text-3xl font-semibold text-gray-900"
+          className="mb-8 sm:mb-12 text-2xl sm:text-3xl font-semibold text-gray-900 text-center sm:text-left"
         >
           How It Works?
         </motion.h2>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {cards.map((card, index) => {
             const IconComponent = card.icon;
             return (
@@ -60,18 +60,18 @@ export default function HowItWorks() {
                   ease: "easeOut"
                 }}
                 viewport={{ once: true, margin: "-50px" }}
-                className={`flex flex-col rounded-xl ${card.bgColor} p-6 w-86.5 h-66.75 cursor-pointer`}
+                className={`flex flex-col rounded-xl ${card.bgColor} p-6 min-h-[200px] cursor-pointer`}
               >
                 <motion.div
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <IconComponent className={`h-10 w-10 mb-4 ${card.iconColor}`} />
+                  <IconComponent className={`h-8 w-8 sm:h-10 sm:w-10 mb-4 ${card.iconColor}`} />
                 </motion.div>
-                <h3 className="mb-2 font-semibold text-gray-900">
+                <h3 className="mb-2 text-lg font-semibold text-gray-900">
                   {card.title}
                 </h3>
-                <p className="text-sm text-gray-700">
+                <p className="text-sm text-gray-700 leading-relaxed">
                   {card.description}
                 </p>
               </motion.div>

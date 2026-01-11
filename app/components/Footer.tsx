@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="bg-emerald-800 px-6 py-12 text-white">
@@ -8,22 +10,22 @@ export default function Footer() {
           <div>
             <p className="mb-2 font-medium">Company</p>
             <ul className="space-y-1 text-emerald-100">
-              <li>Home</li>
-              <li>About us</li>
-              <li>Browse services</li>
-              <li>For Businesses</li>
+              <li><Link href="/" className="hover:underline">Home</Link></li>
+              <li><Link href="/about" className="hover:underline">About us</Link></li>
+              <li><Link href="/services" className="hover:underline">Browse services</Link></li>
+              <li><Link href="/business" className="hover:underline">For Businesses</Link></li>
             </ul>
           </div>
 
           <div>
             <p className="mb-2 font-medium">Support</p>
             <ul className="space-y-1 text-emerald-100">
-              <li>FAQs</li>
-              <li>Contact us</li>
+              <li><Link href="/faq" className="hover:underline">FAQs</Link></li>
+              <li><Link href="/contact" className="hover:underline">Contact us</Link></li>
               <li>
-                <a href="/privacy" className="hover:underline">
+                <Link href="/privacy" className="hover:underline">
                   Privacy Policy
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

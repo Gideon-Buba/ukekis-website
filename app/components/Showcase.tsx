@@ -10,8 +10,8 @@ const showcaseImages = [
 
 export default function Showcase() {
   return (
-    <section className="bg-slate-50 px-6 pb-24">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-3">
+    <section className="bg-slate-50 px-4 pb-16 sm:px-6 sm:pb-24">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 sm:gap-8">
         {showcaseImages.map((src, index) => (
           <motion.div
             key={index}
@@ -25,7 +25,7 @@ export default function Showcase() {
             }}
             viewport={{ once: true, margin: "-50px" }}
             className="
-              group relative h-64 overflow-hidden rounded-2xl
+              group relative h-48 sm:h-56 lg:h-64 overflow-hidden rounded-2xl
               bg-white shadow-md
               transition-all duration-300 ease-out
             "
